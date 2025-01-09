@@ -42,6 +42,47 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity, 
+            height: 200.0,
+            margin: EdgeInsets.symmetric(
+                horizontal: 16.0, vertical: 16.0), // Margin around the box
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16.0), // Rounded corners
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2), // Shadow color
+                  offset: Offset(0, 1), // Shadow position
+                  blurRadius: 6, // Blur radius
+                ),
+              ],
+              image: DecorationImage(
+                image: AssetImage('assets/credit-card.png'), // Background image
+                fit: BoxFit.cover, // Fit the image to cover the box
+              ),
+            ),
+            child: Center(
+              child: Text(
+                'Emil Costa (646)-777-2000',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                  shadows: [
+                    Shadow(
+                      offset: Offset(1, 1), // Slight shadow for readability
+                      blurRadius: 2,
+                      color: Colors.black.withValues(alpha: 0.3),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
