@@ -10,8 +10,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Home',
             style: GoogleFonts.taviraj(
-              fontSize: 28.0, // Adjust font size if needed
-              // fontWeight: FontWeight.bold, // Add other styles as needed
+              fontSize: 28.0,
             )),
         centerTitle: false,
         actions: [
@@ -52,20 +51,20 @@ class HomePage extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 200.0,
-            margin: const EdgeInsets.symmetric(
-                horizontal: 25.0, vertical: 16.0), // Margin around the box
+            margin:
+                const EdgeInsets.symmetric(horizontal: 25.0, vertical: 16.0),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16.0), // Rounded corners
+              borderRadius: BorderRadius.circular(16.0),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
+                  color: Colors.black.withValues(alpha: 0.3),
                   offset: const Offset(0, 1),
                   blurRadius: 4,
                 ),
               ],
               image: const DecorationImage(
-                image: AssetImage('assets/credit-card.png'), // Background image
-                fit: BoxFit.cover, // Fit the image to cover the box
+                image: AssetImage('assets/credit-card.png'),
+                fit: BoxFit.cover,
               ),
             ),
             child: Stack(
@@ -74,8 +73,7 @@ class HomePage extends StatelessWidget {
                   top: 20.0,
                   left: 20.0,
                   child: Column(
-                    crossAxisAlignment:
-                        CrossAxisAlignment.start, // Align items to the left
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Emil Costa',
@@ -83,16 +81,12 @@ class HomePage extends StatelessWidget {
                           fontSize: 22.0,
                         ),
                       ),
-                      // Phone number text
                       Text(
                         '(646)-777-2000',
                         style: TextStyle(
-                            color: Color(
-                                0xFF7C767A), // Change this color to whatever you like
+                            color: Color(0xFF7C767A),
                             fontSize: 18.0,
-                            letterSpacing: -2.0
-                            // fontWeight: FontWeight.bold,
-                            ),
+                            letterSpacing: -2.0),
                       ),
                     ],
                   ),
@@ -103,12 +97,11 @@ class HomePage extends StatelessWidget {
                   child: Row(
                     children: [
                       Image.asset(
-                        'assets/popcorn-logo.png', // Path to the bottom-left asset
+                        'assets/popcorn-logo.png',
                         width: 35.0,
                         height: 35.0,
                       ),
-                      SizedBox(
-                          width: 4.0), // Adds space between the image and text
+                      SizedBox(width: 4.0),
                       Text(
                         'Popcorn',
                         style: GoogleFonts.rubik(
@@ -121,12 +114,12 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: 20.0, // Distance from the bottom of the container
-                  right: 20.0, // Distance from the right of the container
+                  bottom: 18.0,
+                  right: 20.0,
                   child: Image.asset(
-                    'assets/chip.png', // Your image path
-                    width: 35.0, // Set width of the image
-                    height: 35.0, // Set height of the image
+                    'assets/chip.png',
+                    width: 35.0,
+                    height: 35.0,
                   ),
                 ),
               ],
