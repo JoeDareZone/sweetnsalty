@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+final kBoxShadow = [
+  BoxShadow(
+    color: Colors.black.withValues(alpha: 0.3),
+    offset: Offset(0, 2),
+    blurRadius: 4,
+  ),
+];
+
+const kTextColor = Color(0xFF7C767A);
+const kCardHeight = 200.0;
+const kCardMargin = 25.0;
+const kPopcornSize = 35.0;
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -38,7 +51,7 @@ class HomePage extends StatelessWidget {
                   child: Icon(
                     Icons.add,
                     color: Colors.white,
-                    size: 22.0,
+                    size: 26.0,
                   ),
                 ),
               ),
@@ -50,18 +63,12 @@ class HomePage extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            height: 200.0,
-            margin:
-                const EdgeInsets.symmetric(horizontal: 25.0, vertical: 16.0),
+            height: kCardHeight,
+            margin: const EdgeInsets.symmetric(
+                horizontal: kCardMargin, vertical: 16.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16.0),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.3),
-                  offset: const Offset(0, 1),
-                  blurRadius: 4,
-                ),
-              ],
+              boxShadow: kBoxShadow,
               image: const DecorationImage(
                 image: AssetImage('assets/credit-card.png'),
                 fit: BoxFit.cover,
@@ -69,57 +76,49 @@ class HomePage extends StatelessWidget {
             ),
             child: Stack(
               children: [
-                Positioned(
-                  top: 20.0,
-                  left: 20.0,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Emil Costa',
-                        style: GoogleFonts.taviraj(
-                          fontSize: 22.0,
-                        ),
-                      ),
-                      Text(
-                        '(646)-777-2000',
-                        style: TextStyle(
-                            color: Color(0xFF7C767A),
-                            fontSize: 18.0,
-                            letterSpacing: -2.0),
-                      ),
-                    ],
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Emil Costa',
+                            style: GoogleFonts.taviraj(fontSize: 22.0)),
+                        Text('(646)-777-2000',
+                            style: TextStyle(
+                                color: kTextColor,
+                                fontSize: 18.0,
+                                letterSpacing: -2.0)),
+                      ],
+                    ),
                   ),
                 ),
-                Positioned(
-                  bottom: 20.0,
-                  left: 20.0,
-                  child: Row(
-                    children: [
-                      Image.asset(
-                        'assets/popcorn-logo.png',
-                        width: 35.0,
-                        height: 35.0,
-                      ),
-                      SizedBox(width: 4.0),
-                      Text(
-                        'Popcorn',
-                        style: GoogleFonts.rubik(
-                            color: Colors.black,
-                            fontSize: 24.0,
-                            fontWeight: FontWeight.w400,
-                            letterSpacing: -1.0),
-                      ),
-                    ],
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Row(
+                      children: [
+                        Image.asset('assets/popcorn-logo.png',
+                            width: kPopcornSize, height: kPopcornSize),
+                        SizedBox(width: 4.0),
+                        Text('Popcorn',
+                            style: GoogleFonts.rubik(
+                                color: Colors.black,
+                                fontSize: 24.0,
+                                fontWeight: FontWeight.w400,
+                                letterSpacing: -1.0)),
+                      ],
+                    ),
                   ),
                 ),
-                Positioned(
-                  bottom: 18.0,
-                  right: 20.0,
-                  child: Image.asset(
-                    'assets/chip.png',
-                    width: 35.0,
-                    height: 35.0,
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(18.0),
+                    child: Image.asset('assets/chip.png',
+                        width: kPopcornSize, height: kPopcornSize),
                   ),
                 ),
               ],
